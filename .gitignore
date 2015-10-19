@@ -1,0 +1,7 @@
+# The files to ignore
+
+*.bak
+*.sav
+*.bbl
+*.aux
+*.zip
