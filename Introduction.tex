@@ -26,22 +26,24 @@ In this demonstration, we present \ring, a real-time emerging event monitoring s
 Specifically, we develop event detection, event evolution tracking and event refinement algorithms to monitor events in real-time.
 We optimize the full-text indexing engine and distributed processing engine to improve efficiency.
 We also provide a user friendly interface to visualize and facilitate the analysis of emerging events.
-The features of \ring system is as follows.
 
-From the event monitoring perspective, \ring provides
-(1) early detection of potential trending events even with small traffic of tweets, long before they go viral. Trends at different time granularities, \ie trends over 10 minutes or 1 hour, could be simultaneously revealed at detection time to facilitate better tracking of events.
-(2) multi-aspect hierarchical view of correlated sub-events, e.g. different aspects of events such as highlights of a sports game, causality of events such as the trigger and outcome of an investigation, or categorical structure of events such as different genres of detected news reports.
-(3) event evolution tracking to monitor the temporal development of an event and trace of its origin.
+The features of \ring system is as follows.
+%
+From an emerging event monitoring perspective, \ring provides
+(1) early detection of potential trending events even with small traffic of tweets, long before they go viral, 
+%Trends at different time granularities, \ie trends over 10 minutes or 1 hour, could be simultaneously revealed at detection time to facilitate better tracking of events.
+(2) multi-aspect hierarchical view of correlated sub-events, e.g. different aspects of events such as highlights of a sports game, causality of events such as the trigger and outcome of an investigation, or categorical structure of events such as different genres of detected news reports,
+(3) event evolution tracking to monitor the temporal development of an event and trace of its origin, and
 (4) context information of events and filtering of spam events.
 From a system perspective, \ring provides
-(1) horizonal scalability to handle full Weibo or Twitter data.
-(2) optimized indexing for efficient ranged query over time for event tracking and user interaction.
-(3) optimized distributed processing engine handle large volume of data stream.
-(4) friendly user interface to visualize events, contexts and evolutions.
+(1) the horizonal scalability to handle full Weibo or Twitter data,
+(2) an optimized indexing for efficient ranged queries over time for event tracking and user interaction.
+(3) an optimized distributed processing engine to handle large volume of data streams.
+(4) a user friendly  interface to visualize events, contexts and evolutions.
 
-\ring is the first system to enjoy such rich set of event monitoring features with dedicated system optimization efforts.
-It is also the first system to provide multi-aspect hierarchical view of correlated sub-events under real-time emerging event monitoring scenario.
-The capability of \ring system is demonstrated through functional features such as top trending events, event evolution analysis, event query and context extraction e.g. geographical information.
+\ring is among the first system to enjoy such rich set of event monitoring features with dedicated system optimization efforts.
+It is also the first system to provide multi-aspect hierarchical view of correlated sub-events under the real-time emerging event monitoring scenario.
+The capability of \ring system is demonstrated through functional features such as top trending events, event evolution analysis, event query and context extraction e.g., geographical information.
 
 %\noindent
 %\textbf{Related Work.} Xie et al. \cite{xie2014clear} provides real-time online observatory
