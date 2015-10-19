@@ -1,4 +1,4 @@
-\documentclass[conference]{IEEEtran}
+\documentclass[10pt,conference,balance,letterpaper]{IEEEtran}
 % Add the compsoc option for Computer Society conferences.
 %
 % If IEEEtran.cls has not been installed into the LaTeX system files,
@@ -89,17 +89,17 @@ SKLSDE Lab, Beihang University, Beijing, China\\
 
 \begin{abstract}
 We demonstrate \ring, a \un{r}eal-t\un{i}me emerging eve\un{n}t monitorin\un{g} system over microblog text streams.
-\ring integrates our efforts from both event monitoring research and system research.
-From an event monitoring perspective, adopting a graph analytics approach, \ring
-(1) detects emerging events at an early stage even with small magnitude of traffic
-(2) is the first to discover multi-aspect hierarchical sub-events of emerging events in a streaming setting
-(3) reveals evolution of events at multiple time granularities from hours to months.
+\ring integrates our efforts on both research and development of emerging event monitoring.
+From a technical perspective, \ring adopts a graph analytic approach such that
+(1) it detects emerging events at an early stage even with small magnitude of information,
+(2) is among the first to discover multi-aspect hierarchical sub-events of emerging events in a streaming setting, and
+(3) is able to reveal event evolutions at multiple time granularities from hours to months.
 %A refinement procedure is performed to filter out spam texts and events and provide contextual information.
-From a system perspective, \ring
-(1) is able to process the whole Weibo or Twitter text stream with linear horizontal scalability
-(2) optimizes time-ranged keyword query for improved efficiency of both event evolution tracking and user query
-(3) implements its graph stream model on Spark and improves the incremental update efficiency of Spark platform.
-It also comes with friendly user interface to visualize events and statistics.
+From a system perspective, \ring (1)  is able to 
+(1) process the entire Weibo or Twitter text stream with linear horizontal scalability,
+(2) optimizes time-ranged keyword queries to improve the efficiency of event evolution tracking queries,
+(3) implements its graph stream model on Spark with an improvement on the incremental update of the Spark platform, and, 
+finally, (4) comes with a user friendly interface to visualize events and statistics.
 
 %\ring is a promising system that provides real-time comprehensive event analysis and user-friendly interface
 %to facilitate the analysis of trending events.
