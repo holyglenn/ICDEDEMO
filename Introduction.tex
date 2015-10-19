@@ -1,14 +1,14 @@
 \section{Introduction}
 
-Emerging event monitoring over microblog platforms attracts much attention in both research and application due to the real-time nature and viral diffusion of information.
-In fact they have many times been the first reporter or even the major hosting venue of significant events, such as earthquake forecast or a presidential election.
+Emerging event monitoring over microblog platforms attracts much attention from both research and application domains due to the real-time nature and viral diffusion of information.
+In fact they have many times been the first reporter or even the major hosting venue of significant events, such as earthquake forecast or a presidential election campaign.
 A wide variety of events would emerge from such platforms, ranging from political and daily affairs to natural disasters and public security menace.
 Not only are the events that attract mass attention important, but also those events with great potential to go viral while only drew attention from a small fraction of users, \eg a road stabbing with growing witnesses tweeting about it.
 Despite the versatility in topics and traffic, different aspects of events and different angles of user descriptions would complement each other.
-Further insights could be revealed from hierarhical information such as causality of events, \eg the capture of a criminal and the crime he had committed, or categorical information \eg different genres of news from the same agency.
+Further insights, which we refer to as hierarchical sub-event structure, could be revealed, such as multiple aspects of the event, \eg the history and current development of a political event, or causality of events, \eg the capture of a criminal and the crime he had committed, or categorical information, \eg different genres of news from the same agency.
 What's more, trends would emerge from different time granularities from minutes to hours, \eg a concert or sports game, or even days to months, \eg a publicly concerned long trial.
-The temporal evolution pattern could be retrieved to get the big picture of events.
-Emerging event monitoring, \ie early detection, hierarchical correlation analysis, and temporal evolution tracking of these events in real-time, provide valuable insights and allow timely response to these events.
+The temporal evolution pattern could be recovered to get the big picture of events.
+Emerging event monitoring, \ie early detection, hierarchical correlation analysis, and temporal evolution tracking of these events in real-time, provides valuable insights. % and allow timely response to these events.
 Such intelligence are desirable and directly related to government agencies, news groups and marketing strategies, etc.
 
 However, traditional topic modeling methods (e.g. Latent Dirichlet Allocation%~\cite{blei2003latent}
@@ -16,27 +16,30 @@ However, traditional topic modeling methods (e.g. Latent Dirichlet Allocation%~\
 TwitterMonitor~\cite{ mathioudakis2010twittermonitor} provide online detection for general trending events but could not reveal multiple aspects of events nor track the evolution of them.
 CLEar~\cite{xie2014clear} can provide real-time event detection and tracking but could not provide hierarchical analysis of events.
 Neither of them could identify potential viral events at small scale.
-Signitrend~\cite{schubert2014signitrend} could detect potential viral events at small scale but confined to detection and could not provide event correlation analysis.
+Signitrend~\cite{schubert2014signitrend} could detect potential viral events at small scale but confined to only detection and could not provide event tracking and correlation analysis.
 The method would also tend to generate trends that only contain a single keyword, which is hard to comprehend for users.
-Another important aspect of an interactive real-time emerging event monitoring application is system optimization. 
-None of these above methods or systems provide horizontal scalability with distributed computation nor do they investigate in system optimization for their application.
+Another important aspect of event monitoring application is system optimization.
+None of these above methods or systems provide horizontal scalability with distributed computation nor do they investigate in system optimization for their applications.
 
 
-In this demonstration, we present \ring, a \un{r}eal-t\un{i}me emerging eve\un{n}t monitorin\un{g} system over microblog text streams that integrates our efforts in both event monitoring research and system research.
-Specifically, we develop event detection, event evolution tracking and event refinement algorithms to monitor events in real-time and we also optimize search engine and underlying processing engine to boost executing efficiency of our methods. We also provide friendly visualization to facilitate the analysis of emerging events.
-The features and contribution of \ring system is as follows.
-From a semantic perspective, \ring provides
-(I)   early detection of potential trending events even with small traffic of tweets, long before they go viral. Also trends at different time granularities, \ie trends over 10 minutes or 1 hour, could be simultaneously revealed at detection time to facilitate better tracking of events.
-(II)  hierarchical view of correlated sub-events, e.g. different aspects of events such as highlights of a sports game, causality of events such as the trigger and outcome of an investigation, or categorical structure of events such as different genres of detected news reports.
-(III) event evolution tracking to monitor the temporal development of an event and trace back its origin.
-(IV)  context information of events and filtering of spam events.
+In this demonstration, we present \ring, a real-time emerging event monitoring system over microblog text streams that integrates our efforts in both event monitoring research and system research.
+Specifically, we developed event detection, event evolution tracking and event refinement algorithms to monitor events in real-time.
+We optimizeed full-text indexing engine and distributed processing engine for better efficiency. 
+We also provide friendly visualization to facilitate the analysis of emerging events.
+The features of \ring system is as follows.
+From an event monitoring perspective, \ring provides
+(1) early detection of potential trending events even with small traffic of tweets, long before they go viral. Trends at different time granularities, \ie trends over 10 minutes or 1 hour, could be simultaneously revealed at detection time to facilitate better tracking of events.
+(2) multi-aspect hierarchical view of correlated sub-events, e.g. different aspects of events such as highlights of a sports game, causality of events such as the trigger and outcome of an investigation, or categorical structure of events such as different genres of detected news reports.
+(3) event evolution tracking to monitor the temporal development of an event and trace of its origin.
+(4) context information of events and filtering of spam events.
 From a system perspective, \ring provides
-(I)   fast indexing for efficient keyword and range querying on events.
-(II)  distributed stream processing to get low-latency outputs and handle large volumes of data.
-(III) friendly user interface to visualize events, contexts and evolutions.
+(1) horizonal scalability to handle full Weibo or Twitter data.
+(1) optimized indexing for efficient ranged query over time for event tracking and user interaction.
+(2) optimized distributed processing engine handle large volume of data stream.
+(3) friendly user interface to visualize events, contexts and evolutions.
 
-\ring is the first system to satiate all the listed features, combining both event monitoring research and system research efforts.
-It is also the first system to provide hierarchical view of correlated sub-events under real-time emerging event monitoring scenario.
+\ring is the first system to enjoy such rich set event monitoring features with dedicated system optimization efforts.
+It is also the first system to provide multi-aspect hierarchical view of correlated sub-events under real-time emerging event monitoring scenario.
 The capability of \ring system is demonstrated through functional features such as top trending events, event evolution analysis, event query and context extraction e.g. geographical information.
 
 %\noindent

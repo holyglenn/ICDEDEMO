@@ -40,7 +40,7 @@
 \begin{document}
 
 
-\title{Ring: Real-Time Emerging Event Monitoring over Text Stream}
+\title{Ring: Real-Time Emerging Event Monitoring \\ over Text Streams}
 
 %\author{\IEEEauthorblockN{Michael Shell}
 %\IEEEauthorblockA{School of Electrical and\\Computer Engineering\\
@@ -88,19 +88,18 @@ SKLSDE Lab, Beihang University, Beijing, China\\
 
 
 \begin{abstract}
-In this paper, we demonstrate \href{http://ring.cnbigdata.org}{\ring}\footnote{http://ring.cnbigdata.org},
-a \un{R}eal-t\un{i}me emerging eve\un{n}t monitorin\un{g} system over microblog text streams.
-\ring is the first system to integrate efforts from both event analysis research and system research and present several advantages over existing methods
-\cite{xie2014clear, schubert2014signitrend, mathioudakis2010twittermonitor}.
-From a semantic perspective,
-(1) \ring detects emerging events at an early stage at multiple time scales even with small magnitude of traffic by adopting anomaly detection method.
-(2) \ring is the first to discover fine-granularity hierarchies of sub-events in a streaming setting for emerging events analysis.
-(3) \ring can trace the evolution of events at multiple time scales using various metrics of similarity.
-A refinement procedure is performed to filter out spam events and provide contextual information.
-From a system perspective,
-(1) \ring optimizes time-ranged keyword query for improved efficiency of user interactivity and event evolution tracking.
-(2) \ring implements its graph stream model on Spark and improves the incremental update efficiency of the platform.
-\ring also provides a friendly and highly interactive user interface to visualize events and statistics.
+We demonstrate \ring, a \un{r}eal-t\un{i}me emerging eve\un{n}t monitorin\un{g} system over microblog text streams.
+\ring integrates our efforts from both event monitoring research and system research.
+From an event monitoring perspective, adopting a graph analytics approach, \ring
+(1) detects emerging events at an early stage even with small magnitude of traffic
+(2) is the first to discover multi-aspect hierarchical sub-events of emerging events in a streaming setting
+(3) reveals evolution of events at multiple time granularities from hours to months.
+%A refinement procedure is performed to filter out spam texts and events and provide contextual information.
+From a system perspective, \ring
+(1) is able to process the whole Weibo or Twitter text stream with linear horizontal scalability
+(2) optimizes time-ranged keyword query for improved efficiency of both event evolution tracking and user query
+(3) implements its graph stream model on Spark and improves the incremental update efficiency of Spark platform.
+It also comes with friendly user interface to visualize events and statistics.
 
 %\ring is a promising system that provides real-time comprehensive event analysis and user-friendly interface
 %to facilitate the analysis of trending events.
@@ -144,8 +143,8 @@ From a system perspective,
 \section*{Acknowledgment}
 
 
-The authors would like to thank Zhongyu Lu, Haifei Huang, Chenggen Sun, Bo Wu and Xue Li for the help in setting up the system.
-This work is supported by grants from the China 973 Fundamental R\&D Program (No.2014CB340300).
+The authors would like to thank ring team members: Zhongyu Lu, Haifei Huang, Chenggen Sun, Bo Wu, Jianfeng Wen and Xue Li for the help in setting up the system.
+%This work is supported by grants from the China 973 Fundamental R\&D Program (No.2014CB340300).
 
 
 
