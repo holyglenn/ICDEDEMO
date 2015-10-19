@@ -2,11 +2,11 @@
 \noindent\textbf{Event Tracking.}
 \label{tracing}
 Event tracking aims to trace temporal evolution of events along the timeline.
-Given a latest event $E_{0}$, we define the evolution chain of $E_{0}$ as its precedent events:
+Given a latest event $E_{0}$, we define the evolution chain of $E_{0}$:
 \begin{equation}
 E_{1}\rightarrow E_{2}\rightarrow\ldots\rightarrow E_{n}\rightarrow E_{0}
 \end{equation}
-where $E_{i}\rightarrow E_{j}$ means event $E_{j}$ developed from $E_{i}$.
+where $E_{i}$ is a precedent event of $E_{0}$ and $E_{i}\rightarrow E_{j}$ means event $E_{j}$ developed from $E_{i}$.
 %We first get $CS$ for $E_{0}$.
 Under the assumption that related events share at least one noun in their keyword sets,
 a candidate set $CS$ of potential precedent events is retrieved using nouns in the keyword set of $E_{0}$.
