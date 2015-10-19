@@ -18,4 +18,4 @@ The collected data is forwarded to indexing and processing modules through Kafka
 For \emph{indexing and storage}, \ring utilizes HBase\footnote{http://hbase.apache.org/} and elasticsearch\footnote{https://github.com/elastic/elasticsearch} for data storage and full-text indexing, which is able to process large volumes of real-time microblog stream.
 We further optimize elasticsearch over time range query for event tracking and query applications.
 For \emph{data processing}, we implement our models and algorithms on Spark\footnote{http://spark.apache.org} and
- design an incremental update optimization strategy to improve distributed processing efficiency.
+ devise an optimization strategy for statistics incremental update to improve distributed processing efficiency.
