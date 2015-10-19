@@ -11,7 +11,7 @@
 \end{figure}
 
 As shown in Figure \ref{fig:system_architecture},
-\ring mainly consists of three modules, namely data collection, data indexing \& storage and data processing.
+\ring system mainly consists of three modules, namely data collection, data indexing \& storage and data processing.
 %We implement a unified interface to process requests to these services.
 For \emph{data collection}, we developed a distributed crawler to continuously fetch microblogs through Weibo API\footnote{http://open.weibo.com/wiki/Api}.
 The collected data is forwarded to indexing and processing modules through Kafka\footnote{http://kafka.apache.org} to decouple their dependency.

@@ -31,11 +31,11 @@ We calculate $Sim(e_{i}, E_{0})$ for each event in $CS$ and note set $Chain$ for
 $Chain=\left\{ e_{i} \in CS | Sim(e_{i}, E_{0}) > \varepsilon \right\}$.
 Threshold $\varepsilon$ is used to filter out potential unrelated event candidates.
 %Sort the events in $Chain$ by time and we'll get the evolution chain of event $E_{0}$ to meet semantic requirement (3).
-It is worth mentioning that we use another threshold $\varepsilon '$ to merge near duplicate events in $Chain$.
+It is worth mentioning that to merge near duplicate events in $Chain$ we devise a separate threshold $\varepsilon '$.
 $\varepsilon '$ is larger than $\varepsilon$ and smaller than $1$.
-We tune $\varepsilon$ and $\varepsilon '$ empirically on a manually annotated dataset.
+$\varepsilon$ and $\varepsilon '$ are tuned against a manually annotated dataset.
 
-This method~\cite{lu2015discovering} leverages locality sensitive hashing and time range query optimized indexing to improve its efficiency
+Our method~\cite{lu2015discovering} leverages locality sensitive hashing and time range query optimized indexing to improve its efficiency.
 %, as discussed in Section \ref{index},
 It is effective in revealing the evolution of both the long-term and short-term events,
 rather than only recent events \cite{lee2014cast, saha2012learning}.
