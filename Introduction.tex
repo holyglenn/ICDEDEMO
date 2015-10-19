@@ -1,30 +1,30 @@
 \section{Introduction}
 
-Emerging event monitoring over microblog platforms attracts much attention from both research and application domains due to the real-time nature and viral diffusion of information.
-In fact they have many times been the first reporter or even the major hosting venue of significant events, such as earthquake forecast or a presidential election campaign.
+Emerging event monitoring over microblog platforms has attracted much attention from both research and application domains due to the real-time nature and viral diffusion of information.
+In fact they have many times been the first reporter or even the major hosting venue of significant social events, such as the earthquake forecast and presidential election campaign.
 A wide variety of events would emerge from such platforms, ranging from political and daily affairs to natural disasters and public security menace.
-Not only are the events that attract mass attention important, but also those events with great potential to go viral while only drew attention from a small fraction of users, \eg a road stabbing with growing witnesses tweeting about it.
+Not only are the events that attract mass attention important, but also those events with great potentials to go viral while only drew attention from a small fraction of users, \eg a road stabbing with growing witnesses tweeting about it.
 Despite the versatility in topics and traffic, different aspects of events and different angles of user descriptions would complement each other.
-Further insights, which we refer to as hierarchical sub-event structure, could be revealed, such as multiple aspects of the event, \eg the history and current development of a political event, or causality of events, \eg the capture of a criminal and the crime he had committed, or categorical information, \eg different genres of news from the same agency.
+Further insights, which we refer to as hierarchical sub-event structures, could be revealed, such as multiple aspects of the event, \eg the history and current development of a political event, or causality of events, \eg the capture of a criminal and the crime he had committed, or categorical information, \eg different genres of news from the same agency.
 What's more, trends would emerge from different time granularities from minutes to hours, \eg a concert or sports game, or even days to months, \eg a publicly concerned long trial.
 The temporal evolution pattern could be recovered to get the big picture of events.
 Emerging event monitoring, \ie early detection, hierarchical correlation analysis, and temporal evolution tracking of these events in real-time, provides valuable insights. % and allow timely response to these events.
 Such intelligence are desirable and directly related to government agencies, news groups and marketing strategies, etc.
 
 However, traditional topic modeling methods (e.g. Latent Dirichlet Allocation%~\cite{blei2003latent}
-) and its derivatives could not be directly applied to noisy short texts nor could they perform early detection of emerging events in real-time.
-TwitterMonitor~\cite{ mathioudakis2010twittermonitor} provide online detection for general trending events but could not reveal multiple aspects of events nor track the evolution of them.
-CLEar~\cite{xie2014clear} can provide real-time event detection and tracking but could not provide hierarchical analysis of events.
+) and its derivatives could not be directly applied to noisy short texts, and are not able to perform early detection of emerging events in real-time.
+TwitterMonitor~\cite{ mathioudakis2010twittermonitor} provides online detection for general trending events but could not reveal multiple aspects of events nor track the evolution of them.
+CLEar~\cite{xie2014clear} provides real-time event detection and tracking but could not provide hierarchical analysis of events.
 Neither of them could identify potential viral events at small scale.
-Signitrend~\cite{schubert2014signitrend} could detect potential viral events at small scale but confined to only detection and could not provide event tracking and correlation analysis.
-The method would also tend to generate trends that only contain a single keyword, which is hard to comprehend for users.
-Another important aspect of event monitoring application is system optimization.
-None of these above methods or systems provide horizontal scalability with distributed computation nor do they investigate in system optimization for their applications.
+Signitrend~\cite{schubert2014signitrend} could detect potential viral events at small scale but is confined to only detection, and could not provide event tracking and correlation analysis.
+The method would also tend to generate trends that only contain a single keyword, which is hard to understand for users.
+Another important aspect of event monitoring applications is the system optimization.
+None of the above provides the horizontal scalability with distributed computations, nor do they investigate system optimizations for their applications.
 
 
 In this demonstration, we present \ring, a real-time emerging event monitoring system over microblog text streams that integrates our efforts in both event monitoring research and system research.
 Specifically, we developed event detection, event evolution tracking and event refinement algorithms to monitor events in real-time.
-We optimized full-text indexing engine and distributed processing engine for better efficiency. 
+We optimized full-text indexing engine and distributed processing engine for better efficiency.
 We also provide friendly visualization to facilitate the analysis of emerging events.
 The features of \ring system is as follows.
 From an event monitoring perspective, \ring provides
