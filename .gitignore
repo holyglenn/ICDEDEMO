@@ -5,3 +5,7 @@
 *.bbl
 *.aux
 *.zip
+*.gz
+*.out
+*.log
+*.blg
