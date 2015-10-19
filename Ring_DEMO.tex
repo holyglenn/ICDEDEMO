@@ -1,0 +1,199 @@
+\documentclass[conference]{IEEEtran}
+% Add the compsoc option for Computer Society conferences.
+%
+% If IEEEtran.cls has not been installed into the LaTeX system files,
+% manually specify the path to it like:
+% \documentclass[conference]{../sty/IEEEtran}
+
+
+
+
+
+% *** Do not adjust lengths that control margins, column widths, etc. ***
+% *** Do not use packages that alter fonts (such as pslatex).         ***
+% There should be no need to do such things with IEEEtran.cls V1.6 and later.
+% (Unless specifically asked to do so by the journal or conference you plan
+% to submit to, of course. )
+
+
+% correct bad hyphenation here
+\hyphenation{op-tical net-works semi-conduc-tor}
+\usepackage{graphicx}
+\usepackage{balance}  % for  \balance command ON LAST PAGE  (only there!)
+\usepackage{array}
+\usepackage{xspace}
+\usepackage{hyperref}
+\usepackage{array}
+%\usepackage{booktabs}
+%\usepackage{color}
+%\usepackage{algorithmic}
+%\usepackage{algorithm}
+%\usepackage[table,xcdraw]{xcolor}
+%\usepackage{epsfig}
+%\usepackage{epstopdf}
+%\usepackage{subfigure}
+%\usepackage[english]{babel}
+\usepackage{multirow}
+\usepackage{amsmath}
+%\usepackage{caption}
+
+\begin{document}
+
+
+\title{Ring: Real-Time Emerging Event Monitoring over Text Stream}
+
+%\author{\IEEEauthorblockN{Michael Shell}
+%\IEEEauthorblockA{School of Electrical and\\Computer Engineering\\
+%Georgia Institute of Technology\\
+%Atlanta, Georgia 30332--0250\\
+%Email: http://www.michaelshell.org/contact.html}
+%\and
+%\IEEEauthorblockN{Homer Simpson}
+%\IEEEauthorblockA{Twentieth Century Fox\\
+%Springfield, USA\\
+%Email: homer@thesimpsons.com}
+%\and
+%\IEEEauthorblockN{James Kirk\\ and Montgomery Scott}
+%\IEEEauthorblockA{Starfleet Academy\\
+%San Francisco, California 96678-2391\\
+%Telephone: (800) 555--1212\\
+%Fax: (888) 555--1212}}
+
+% for over three affiliations, or if they all won't fit within the width
+% of the page, use this alternative format:
+%
+\author{\IEEEauthorblockN{
+Weiren Yu,
+Jianxin Li,
+Richong Zhang,
+Shuai Ma,
+Jinpeng Huai
+}
+\IEEEauthorblockA{
+SKLSDE Lab, Beihang University, Beijing, China\\
+\{yuwr, lijx zhangrc\}@act.buaa.edu.cn,
+\{mashuai, huaijp\}@buaa.edu.cn}
+
+}
+
+
+
+\maketitle
+
+\newcommand{\eat}[1]{}
+\newcommand{\un}[1]{\underline{#1}}
+\newcommand{\ring}{{\sc Ring}\xspace}
+\newcommand{\ie}{\emph{i.e.,}\xspace}
+\newcommand{\eg}{\emph{e.g.,}\xspace}
+
+
+\begin{abstract}
+In this paper, we demonstrate \href{http://ring.cnbigdata.org}{\ring}\footnote{http://ring.cnbigdata.org},
+a \un{R}eal-t\un{i}me emerging eve\un{n}t monitorin\un{g} system over microblog text streams.
+\ring is the first system to integrate efforts from both event analysis research and system research and present several advantages over existing methods
+\cite{xie2014clear, schubert2014signitrend, mathioudakis2010twittermonitor}.
+From a semantic perspective,
+(1) \ring detects emerging events at an early stage at multiple time scales even with small magnitude of traffic by adopting anomaly detection method.
+(2) \ring is the first to discover fine-granularity hierarchies of sub-events in a streaming setting for emerging events analysis.
+(3) \ring can trace the evolution of events at multiple time scales using various metrics of similarity.
+A refinement procedure is performed to filter out spam events and provide contextual information.
+From a system perspective,
+(1) \ring optimizes time-ranged keyword query for improved efficiency of user interactivity and event evolution tracking.
+(2) \ring implements its graph stream model on Spark and improves the incremental update efficiency of the platform.
+\ring also provides a friendly and highly interactive user interface to visualize events and statistics.
+
+%\ring is a promising system that provides real-time comprehensive event analysis and user-friendly interface
+%to facilitate the analysis of trending events.
+\end{abstract}
+% IEEEtran.cls defaults to using nonbold math in the Abstract.
+% This preserves the distinction between vectors and scalars. However,
+% if the conference you are submitting to favors bold math in the abstract,
+% then you can use LaTeX's standard command \boldmath at the very start
+% of the abstract to achieve this. Many IEEE journals/conferences frown on
+% math in the abstract anyway.
+
+
+\IEEEpeerreviewmaketitle
+
+
+
+\input{Introduction}
+\section{Emerging Event Monitoring}
+\input{Model_EventDetection}
+\input{Model_EventRefinement}
+\input{Model_EventTracing}
+\section{The RING System}
+\input{System_OverallArchitecture}
+\input{System_DataCollection}
+\input{System_Indexing}
+\input{System_StreamProcessing}
+%\input{System_EventDatabase}
+%\section{System Architecture}
+\section{Demonstration}
+\input{Demo_UI}
+\input{Demo_CaseStudy}
+
+\input{Conclusion}
+%\input{Acknowledgement}
+
+
+% conference papers do not normally have an appendix
+
+
+% use section* for acknowledgement
+\section*{Acknowledgment}
+
+
+The authors would like to thank Zhongyu Lu, Haifei Huang, Chenggen Sun, Bo Wu and Xue Li for the help in setting up the system.
+This work is supported by grants from the China 973 Fundamental R\&D Program (No.2014CB340300).
+
+
+
+
+
+% trigger a \newpage just before the given reference
+% number - used to balance the columns on the last page
+% adjust value as needed - may need to be readjusted if
+% the document is modified later
+%\IEEEtriggeratref{8}
+% The "triggered" command can be changed if desired:
+%\IEEEtriggercmd{\enlargethispage{-5in}}
+
+% references section
+
+% can use a bibliography generated by BibTeX as a .bbl file
+% BibTeX documentation can be easily obtained at:
+% http://www.ctan.org/tex-archive/biblio/bibtex/contrib/doc/
+% The IEEEtran BibTeX style support page is at:
+% http://www.michaelshell.org/tex/ieeetran/bibtex/
+%\bibliographystyle{IEEEtran}
+% argument is your BibTeX string definitions and bibliography database(s)
+%\bibliography{IEEEabrv,../bib/paper}
+%
+% <OR> manually copy in the resultant .bbl file
+% set second argument of \begin to the number of references
+% (used to reserve space for the reference number labels box)
+%\begin{thebibliography}{1}
+
+%\bibitem{IEEEhowto:kopka}
+%H.~Kopka and P.~W. Daly, \emph{A Guide to \LaTeX}, 3rd~ed.\hskip 1em plus
+%  0.5em minus 0.4em\relax Harlow, England: Addison-Wesley, 1999.
+
+%\end{thebibliography}
+
+
+% The following two commands are all you need in the
+% initial runs of your .tex file to
+% produce the bibliography for the citations in your paper.
+\bibliographystyle{IEEETran}
+\bibliography{Ring_Reference}  % vldb_sample.bib is the name of the Bibliography in this case
+% You must have a proper ".bib" file
+%  and remember to run:
+% latex bibtex latex latex
+% to resolve all references
+
+
+% that's all folks
+\end{document}
+
+

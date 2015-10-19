@@ -1,0 +1,51 @@
+
+%\subsection{Event Detection}
+
+\noindent\textbf{Event Detection.}
+\label{detection}
+The event detection method consists of three steps: trending keyword detection, event detection and hierarchical sub-event correlation construction.
+An event is essentially defined as a set of weighted keywords, enriched by its context information such as detection time, geographical location, participants and so on.
+Based on co-occurrence relationship of keywords, we adopt a similar outlier detection framework as in \cite{yu2013anomalous} for early detection of trending keywords.
+The incoming text is tokenized and keywords are defined as nodes and their co-occurrence relationship as edges in the graph.
+The text stream is modeled as streaming edge weight updates where edge frequency based on weighted decay is updated with each pair of keywords co-occurrence.
+Trends over different time granularities could be monitored simultaneously by setting different decay rate.
+The graph stream model is fully distributed with a linear scalability since it follows a data-parallel paradigm where the data could be partitioned according to keywords, \ie each computing node would only need data containing the keyword in its partition. 
+An efficient context statistics maintenance strategy is developed for efficient update.
+Specificallys, for each node $i$ three pieces of information are maintained:
+(i) the last time stamp $L(i)$ at which an edge was received of node $i$
+(ii) the set of nodes in $S(i,t)$
+(iii) an array of frequency values $F(i, j, L(i))$ for each node $j\in S(i,t)$.
+
+A scalable overlapping community detection method is applied to detect events over trending keywords.
+Keywords of the same event would co-occur and be more densely linked internally than with keywords from a different event.
+It would be intuitive to follow modularity-based~\cite{weng2011event} or betweenness centrality based~\cite{sayyadi2013toit}
+community detection methods for event detection.
+However, such methods would lead to 4 major drawbacks:
+(1) non-local: density changes in parts of the graph would affect the overall result for community detection.
+(2) mixed contexts: a keyword cannot appear in different events
+(3) co-occurrence by chance: keywords in different contexts would likely to be assigned to the same event due to lack of explicit definition of keyword community
+(4) no hierarchy: hierarchical correlation analysis is absent for such methods.
+Events would naturally consist of different aspects which formulate a hierarchical structure.
+
+To distill events from these aspects and get the bigger picture,
+we use \emph{k-clique percolation} to find overlapping communities as events~\cite{palla2005uncovering}.
+A \emph{k-clique-community} is defined as a union of all k-cliques that can be reached from each other through a series of
+adjacent k-cliques, where adjacency means sharing \emph{k-1} nodes.
+Such definition of community enjoys several advantages versus existing methods:
+(1) local definition of community that would not be affected by change in parts of the graph
+(2) natural overlap to decode polysemy and diverse contexts
+(3) reduce co-occurrence by chance through parameter $k$
+(4) hierarchical view of sub-events is encoded in the maximal cliques of the communities.
+
+A frequent pattern tree mining technique is adopted to retrieve hierarchy of correlated sub-events.
+Valuable insights, such as different aspects of events, causality of events or categorical structure of events, could be revealed.
+We are the first to provide a hierarchical view of correlated sub-events for the emerging event detection scenario.
+Highly matching tweets related to events are retrieved as representation texts through querying search engine with keywords of sub-event.
+
+We manually inspect 100 detected real world events and its first related tweet in our dataset.
+We find that the method can detect 79\% of events within 10 minutes and 40\% within 5 after the first tweet appeared.
+The method can outperform state-of-the-art topic and event detection methods based on keyword
+co-occurrence \cite{weng2011event, sayyadi2013toit, yan2013biterm} in terms of keyword coherence (NPMI) and summarization quality (ROUGE-1).
+The method is implemented on Spark and share a cluster of 8 machines
+with other algorithms and system components, where it can handle 16k tweets per second and bear linear scalability given more machines.
+

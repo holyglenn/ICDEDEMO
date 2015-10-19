@@ -1,0 +1,17 @@
+
+\noindent\textbf{Distributed Processing:}
+%\subsection{Stream Processing}
+Our event monitoring algorithm is implemented on Spark.
+As discussed in Section~\ref{detection}, a continuously changing graph of keywords and their co-occurrence relationship is built from the text stream.
+To improve the efficiency of graph update, we created an index in each partition of the Spark RDD to rapidly locate data records and enable fine-grained incremental updates~\cite{ju2015igraph}.
+This alleviates the overhead of data copy and shuffling when updated nodes only account for a small portion of the graph and when updated statistics of each node can be computed from a known portion of data, \ie tweets containing certain keywords in our case.
+Experiments show that the optimization has a speedup of 5.4X for incremental PageRank and 3.7X for statistics update.
+
+%(What's the performance improvement, by how much?)
+
+%\textbf{Incremental Computing:} The data in each partition of RDD is divided into two parts, \textit{raw data part} and \textit{incremental data part}. The incremental data %part is structured by a sequence of blocks, each contains the update messages in a certain time interval. When all the computation tasks relying on some block have been %executed, the data in the block is merged into the raw data part.
+
+%\textbf{Work Balance:} The computation cost of the hot spot during event detection is higher, often proportional to the heat rate. Upon recording such costly data in each %partition and evaluate its heat rate every period of time, we build an optimizing model to rebalance to make all the partitions approximately have total heat rate. According %to the result of the model, partitions exchange data and record this change to ensure the rightness of locating with the index.
+
+
+

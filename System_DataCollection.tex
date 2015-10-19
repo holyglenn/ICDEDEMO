@@ -1,0 +1,16 @@
+
+
+%\subsection{Data Collection}
+\noindent\textbf{Data Collection.}
+We built a distributed crawler to collect data from Weibo, the largest microblog platform in China.
+The crawler continuously collects the latest microblogs published by users preferrably with a large number of followers, \ie opinion leaders.
+The crawler has a master/slave architecture.
+The master node utilizes key/value store to perform task scheduling.
+Slave nodes get the assignments from the master node and crawl data from Weibo.
+A task would monitor the reposts and comments of an original tweet and retrieve the repost and comment list, 
+from which we can construct the forward graph of each tweet message.
+The tasks are scheduled according to posts' priority, which is weighed by the number of reposts and comments.
+Each task has a life cycle so that each thread of post can be effectively monitored or terminated.
+In order to make full use of computer resources and the limited API bandwidth, we deploy the crawler in KVM virtual machines.
+The data is crawled using Weibo API in public privilege. 
+Due to recent change on the public API, up to now we are able to collect 3 - 10 million microblogs daily.

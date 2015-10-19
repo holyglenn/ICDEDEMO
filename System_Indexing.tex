@@ -1,0 +1,34 @@
+
+\noindent\textbf{Indexing:}
+%\subsection{Indexing}
+\label{index}
+We built our full-text index for microblog texts and the emerging events with elasticsearch.
+Event evolution tracking application issues extensive amount of keyword queries to retrieve related tweets for similarity computation.
+Each query is issued toward data in a specific time interval as defined in the event detection algorithm. 
+We add a time range structure in the multi-layer index of elasticsearch to directly optimize time range query performance~\cite{huang2015indexing}.
+Such structure for time ranged queries avoids traversing each layer and allows efficient navigation to records within a specified time interval.
+
+
+
+%There are two important data structures for performance improvement:% in the indexing engine of \ring:
+%\emph{Word Partition:}
+%A word partition is an equal-length partition created by dividing the fixed dictionary in alphabetical order.
+%Words of the text are hashed into different partitions and such a fine-grained partition strategy would improve index and query performance through better parallelization.
+%%(What's the vocabulary? Is range dynamic?)
+%%\textbf{Multi-Layers:}
+%%Every partition is a multi-layered index. A threshold governs the size of each layer.
+%%New data are first inserted into the lowest layer.
+%%When it reaches the size threshold, the data of this layer would be moved to a higher layer in a batch manner.
+%%This structure can obtain the tradeoff between index and query.
+%%(Why do we do this? What's the old es way? How is the improvement/comparison?)
+%\emph{Time Range:}
+%Event tracing application and queries to microblog texts would require high performance time range queries.
+%We add a time range structure in the multi-layer index of elasticsearch.
+%Such structure for time ranged queries avoids traversing each layer and allows efficient navigation to records within a specified time interval.
+%%Long time range queries could also be processed efficiently due to the multi-layer merging strategy.
+%%(What does this mean?)
+
+%%By using the above index structure, \ring can reduce the cost of traversing the index effectively.
+%%The optimized index can index 2k microblogs per second compared to 1.2k in the same setting without optimization.
+%%(What) Query latency is reduced by 50\% on average.
+%%(How much improvement?)

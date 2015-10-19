@@ -1,0 +1,12 @@
+\subsection{Event Database}
+As discussed in Section~\ref{detection} and~\ref{tracing}, the detected events and their corresponding storylines can be discovered by our system. With the accumulation of these information, the pattern of how events developed and how they are related can be generalized. To facilitate this pattern mining functionality, we create an event knowledge base for storing the collected data and design a set of pattern mining algorithms for infer the hidden dependencies between events.
+\begin{figure}[h!]
+\centering
+\includegraphics[width=.48\textwidth]{ekbArchitecture}
+\caption{Event Knowledge Base Architecture}
+\label{fig:architecture}
+\end{figure}
+
+Specifically, we implement the event knowledge base as a two level graph structure. The first level directly stores the detected results (including events, storylines, and dependencies). The second level stores the generalized concepts and their sequential dependencies. The goal of the provided algorithms is to build the connection between these two levels and to detect the sequential pattern between concepts. In practice, the collected events are continuously accumulated. This dynamic characteristics of event streams requires the design of the pattern mining module capable of accommodating such dynamics and operating both effectively and efficiently.
+
+Figure~\ref{fig:architecture} shows the architecture of Event Knowledge Base. The database consists of two modules: on-line module and off-line module. The low-complexity on-line module instantaneously saves the new arrived events into the knowledge base and invokes concept generalization algorithms to update the knowledge base. Off-line model contains pattern mining algorithms with relatively high computational cost and is called up both on demand.
