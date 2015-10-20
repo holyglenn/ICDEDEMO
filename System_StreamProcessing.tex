@@ -1,11 +1,11 @@
 
 \noindent\textbf{Distributed Processing:}
 %\subsection{Stream Processing}
-Our event monitoring algorithm is implemented on Spark.
+Our monitoring algorithms are implemented on Spark.
 As discussed in Section~\ref{detection}, a continuously changing graph of keywords and their co-occurrence relationship is built from the text stream.
 To improve the efficiency of graph update, we created an index in each partition of the Spark RDD to rapidly locate data records and enable fine-grained incremental updates~\cite{ju2015igraph}.
 This alleviates the overhead of data copy and shuffling when updated nodes only account for a small portion of the graph and when updated statistics of each node can be computed from a known portion of data, \ie tweets containing certain keywords in our case.
-Experiments show that the optimization has a speedup of 5.4X for incremental PageRank and 3.7X for statistics update.
+Experiments show that our method has a speedup of 3.7X for incremental statistics update and 5.4X for incremental PageRank.
 
 %(What's the performance improvement, by how much?)
 

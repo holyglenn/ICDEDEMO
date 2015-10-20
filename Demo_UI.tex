@@ -13,10 +13,10 @@
 
 %\subsection{User Interface}
 \noindent\textbf{Features for Demo.}
-We introduce three function features to demonstrate emerging event monitoring as shown in Figure \ref{fig:UI}.
+We demonstrate three features based on emerging event monitoring algorithms, as shown in Figure \ref{fig:UI}.
 
 \emph{Trending Event Ranking:}
-Events detected by \ring system are tracked based on the method mentioned in Section \ref{tracing}.
+%Events detected by \ring system are tracked based on the method mentioned in Section \ref{tracing}.
 Events are ranked according to the volume of their related microblogs.
 The ``hottest'' trending events in the past 5 hours, 1 day and 1 week are displayed on the front page of \ring system.
 Our monitoring application could cover emerging events ahead of major news sites, \eg sina.com.cn or baidu.com.
@@ -24,10 +24,10 @@ Spam information has been effectively removed and missing events are majorly due
 %There would be missing events
 
 \emph{Event Analysis:}
-Navigated from a search or trending event ranking, the event analysis page shows the detailed information of a detected event
-which includes representative tweet as human-readable abstract, time of detection, keyword summarization, participants, event class as news or spam, location, sentiment bias and popularity.
-The evolution the current event is displayed on a timeline interface, with related microblogs, sub-event hierarchy featuring trending keywords.
+Navigated from a search or the trending event ranking feature, the event analysis page shows detailed information of a detected event which includes representative tweet as human-readable abstract, time of detection, keyword summarization, participants, event class as news or spam, location, sentiment bias and popularity, etc.
+The evolution of the current event is displayed on a timeline interface, together with related microblogs and sub-event hierarchy represented with ranked trending keywords.
 A word cloud of frequent keywords in related tweets is also displayed.
+Note that the trending keywords are not necessarily the most frequent keywords.
 
 \emph{Geographical Distribution:}
 The geographical distribution page shows a map with ballon markups indicating the number of events in the location.

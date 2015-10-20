@@ -5,10 +5,10 @@
 %We further introduce our method to refine these results.
 The refinement procedures are responsible for spam filtering and context enrichment.
 %There are a lot of noises, e.g. ads, gossips of celebrities and daily life on the social network.
-Based on~\cite{liu2013many}, we first remove spam accounts from our data crawler,
+Based on~\cite{liu2013many}, we first remove the spam accounts from our data crawler,
 who are either constantly publishing ads content or actually manipulated by intelligent software for propaganda purposes.
 We apply a 3-class Naive Bayes to differentiate news, ads and widsom words among detected trending events,
-where the latter two classes are major types of spam information on Weibo.
+where the latter two classes are major types of spams on Weibo.
 We train the classifier with manually labeled data based on features of content, users and temporal information.
 %This meets semantic requirement (4).
 We further extract the location of the detected events using a location vocabulary
